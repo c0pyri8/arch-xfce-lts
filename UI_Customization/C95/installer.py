@@ -460,7 +460,7 @@ class InstallGUI:
 			return
 		with open(labwc_rc, "r") as f:
 			content = f.read()
-		content = re.sub(r'(<theme>\s*<name>)[^<]*(</name>)', r'\gChicago95\g', content)
+		content = re.sub(r'(<theme>\s*<name>)[^<]*(</name>)', r'\g<1>Chicago95\g<2>', content)
 		content = re.sub(r'<cornerRadius>[^<]*</cornerRadius>', '<cornerRadius>0</cornerRadius>', content)
 		with open(labwc_rc, "w") as f:
 			f.write(content)
@@ -520,24 +520,4 @@ class InstallGUI:
 	def set_install_background(self, toggle):
 		self.install_background = not self.install_background
 
-	def set_install_sounds(self, toggle):
-		self.install_sounds = not self.install_sounds
-
-	def set_change_thunar(self, toggle):
-		self.thunar = not self.thunar
-
-	def set_change_terminal(self, toggle):
-		self.terminal_colors = not self.terminal_colors
-
-	def set_change_bash(self, toggle):
-		self.bash = not self.bash
-
-	def set_change_zsh(self, toggle):
-		self.zsh = not self.zsh
-
-	def set_change_panel(self, toggle):
-		self.panel = not self.panel
-
-
-app = InstallGUI()
-Gtk.main()
+	def set_install_sounds
